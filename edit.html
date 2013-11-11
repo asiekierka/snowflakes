@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<style>
+* { border: 0; margin: 0; padding: 0; }
+body { width: 100%; height: 100%; }
+#nightglider { width: 100%; height: 100%; }
+#editorPreview {
+	position: fixed;
+	z-index: 998;
+}
+#editorview {
+	z-index: 999;
+	height: 100px; width: 100%; position: fixed; bottom: 0px; left: 0px;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+button {
+padding-top: 2px;
+padding-right: 6px;
+padding-bottom: 3px;
+padding-left: 6px;
+}
+</style>
+<script type="text/javascript" src="/static/zepto.min.js"></script>
+<script type="text/javascript" src="/static/underscore-min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+<div id="nightglider">
+</div>
+<div id="editorview">
+<b>EDIT:</b>
+<form action="/colorfulFlyingHorses/upload" method="post" id="uploadForm" enctype="multipart/form-data">
+Image: <input type="file" id="editorImage" name="image" onchange="loadMeAnImage(event)"><br>
+<input type="hidden" id="fX" name="x" value="0"></input>
+<input type="hidden" id="fY" name="y" value="0"></input>
+<input type="hidden" id="fWidth" name="width" value="0"></input>
+<button type="button" id="uploadButton">Submit</button>
+</form>
+</div>
+<script type="text/javascript" src="/static/viewer.js"></script>
+<script type="text/javascript" src="/static/editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<style>
+* { border: 0; margin: 0; padding: 0; }
+body { width: 100%; height: 100%; }
+#nightglider {
+	position: absolute;
+	top: 500px;
+	left: 500px;
+}
+#zoomControls {
+	z-index: 999;
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	padding: 5px;
+	padding-right: 12px;
+}
+#zoomControls > a, #zoomControls > a:hover {
+	font-size: 24px;
+	color: rgba(0, 0, 0, 0.5);
+	text-decoration: none;
+}
+#zoomControls > a:hover {
+	color: rgba(0, 0, 0, 0.8);
+}
+</style>
+<script type="text/javascript" src="/static/zepto.min.js"></script>
+<script type="text/javascript" src="/static/underscore-min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+</head>
+<body id="nightglider">
+<div id="zoomControls">
+<a href="#" id="zoomPlus">+</a> <a href="#" id="zoomMinus">-</a>
+</div>
+<script type="text/javascript" src="/static/viewer.js"></script>
+</body>
+</html>
